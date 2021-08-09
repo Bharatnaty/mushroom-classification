@@ -297,16 +297,16 @@ else:
         , stalk_color_above_ring_no, stalk_color_below_ring_no, ring_number_no, ring_type_no, spore_print_color_no,
              population_no, habitat_no]
 
-    with open(r"C:\Users\Admin\PycharmProject\project\mushroom_model.pkl", "rb")as file:
+    with open(r"mushroom\mushroom_model.pkl", "rb")as file:
         model = pickle.load(file)
         res = model.predict([input])
     if st.button("Submit"):
         if res[0] == 0:
             result = "Eat"
-            image=cv2.resize(cv2.imread(r"C:\Users\Admin\PycharmProject\project\eat.png"),(100,100))
+            image=cv2.resize(cv2.imread(r"mushroom\eat.png"),(100,100))
         elif res[0] == 1:
             result = "Poision"
-            image=cv2.imread(r"C:\Users\Admin\PycharmProject\project\do-not-eat.jpg")
+            image=cv2.imread(r"mushroom\do-not-eat.jpg")
             image=cv2.resize(image,(100,100))
         st.text(result)
         st.image(image)
