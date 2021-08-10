@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
 import pickle
-import cv2
+#import cv2
 st.title("Mushroom Classification")
 
 st.sidebar.markdown("CHOOSE WHAT YOU WANT")
@@ -303,10 +303,10 @@ else:
     if st.button("Submit"):
         if res[0] == 0:
             result = "Eat"
-            image=cv2.resize(cv2.imread(r"mushroom\eat.png"),(100,100))
+            #image=cv2.resize(cv2.imread(r"mushroom\eat.png"),(100,100))
         elif res[0] == 1:
             result = "Poision"
-            image=cv2.imread(r"mushroom\do-not-eat.jpg")
-            image=cv2.resize(image,(100,100))
+            #image=cv2.imread(r"mushroom\do-not-eat.jpg")
+            #image=cv2.resize(image,(100,100))
         st.text(result)
         st.image(image)
