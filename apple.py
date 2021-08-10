@@ -303,10 +303,9 @@ else:
     if st.button("Submit"):
         if res[0] == 0:
             result = "Eat"
-            #image=cv2.resize(cv2.imread(r"mushroom\eat.png"),(100,100))
+            image="mushroom\eat.png"
         elif res[0] == 1:
             result = "Poision"
-            #image=cv2.imread(r"mushroom\do-not-eat.jpg")
-            #image=cv2.resize(image,(100,100))
+            image=r"mushroom\do-not-eat.jpg"
         st.text(result)
         st.image(image)
