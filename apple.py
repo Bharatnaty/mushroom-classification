@@ -303,9 +303,7 @@ else:
     if st.button("Submit"):
         if res[0] == 0:
             result = "Eat"
-            image="eat.png"
         elif res[0] == 1:
             result = "Poision"
-            image=r"do-not-eat.jpg"
         st.text(result)
-        st.image(image)
+        
