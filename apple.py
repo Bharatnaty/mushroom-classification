@@ -297,7 +297,7 @@ else:
         , stalk_color_above_ring_no, stalk_color_below_ring_no, ring_number_no, ring_type_no, spore_print_color_no,
              population_no, habitat_no]
 
-    with open(r"mushroom\mushroom_model.pkl", "rb")as file:
+    with open(r"mushroom_model.pkl", "rb")as file:
         model = pickle.load(file)
         res = model.predict([input])
     if st.button("Submit"):
