@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
 import pickle
+import logging
+logging.basicConfig(filename="file.log",level=logging.DEBUG)
 #import cv2
 st.title("Mushroom Classification")
 
@@ -296,7 +298,8 @@ else:
              stalk_shape_no, stalk_root_no, stalk_surface_above_ring_no, stalk_surface_below_ring_no
         , stalk_color_above_ring_no, stalk_color_below_ring_no, ring_number_no, ring_type_no, spore_print_color_no,
              population_no, habitat_no]
-
+    
+    
     with open(r"mushroom_model.pkl", "rb")as file:
         model = pickle.load(file)
         res = model.predict([input])
@@ -306,4 +309,12 @@ else:
         elif res[0] == 1:
             result = "Poision"
         st.text(result)
+    out=pd.DataFrame().append({"cap_shape_no":cap_shape_no,"cap_surface_no":cap_surface_no, "bruises_no":bruises_no,"odor_no":odor_no, "gill_spacing_no":gill_spacing_no,
+                               "gill_size_no":gill_size_no,"gill_color_no":gill_color_no,"stalk_shape_no":stalk_shape_no, "stalk_root_no":stalk_root_no,
+                               "stalk_surface_above_ring_no":stalk_surface_above_ring_no,"stalk_surface_below_ring_no":stalk_surface_below_ring_no,"stalk_color_above_ring_no":stalk_color_above_ring_no,
+                               "stalk_color_below_ring_no":stalk_color_below_ring_no,"ring_number_no":ring_number_no,"ring_type_no":ring_type_no,"spore_print_color_no":spore_print_color_no,
+                               "population_no":population_no,"habitat_no": habitat_no,"result":result
+                              })
+    
+    logging.info("Output is achieved")
         
