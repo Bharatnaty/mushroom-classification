@@ -1,4 +1,4 @@
-# mushroom-classification
+# MUSHROOM-CLASSIFICATION
 
 streamlit documentation :https://streamlit.io/<br>
 pandas documentation :https://pandas.pydata.org/
