@@ -1,4 +1,4 @@
-# MUSHROOM-CLASSIFICATION
+# MUSHROOM-CLASSIFICATION PROJECT
 
 streamlit documentation :https://streamlit.io/<br>
 pandas documentation :https://pandas.pydata.org/
